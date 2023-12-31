@@ -3,10 +3,10 @@ from os import popen
 
 app = Flask(__name__)
 
-def valid_cmd(cmd):
+def valid_cmd(user_input):
     allowed_cmds = ['id', 'ls', 'whoami', 'pwd']
-    for i in allowed_cmds:
-        if i in cmd:
+    for cmd in allowed_cmds:
+        if cmd in user_input:
             return True
     else:
         return False
